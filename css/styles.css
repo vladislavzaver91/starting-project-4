@@ -1,0 +1,183 @@
+/* основной штрифт poppins
+заголовки work sans */
+
+:root {
+    --primary-text-color: #645C55;
+    --secondary-text-color: #1B1A1A;
+    --third-text-color: #403E3B;
+    --primary-white-color: #ffffff;
+    --secondary-white-color: #ECE7E4;
+    --secondary-bg-color: #F7F7F7;
+    --third-bg-color: #CEC4BC;
+}
+
+.list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.link {
+    display: block;
+    text-decoration: none;
+    font-style: normal;
+
+    color: var(--secondary-text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.50;
+    letter-spacing: 0.4px;
+
+    background-color: var(--primary-white-color);
+    color: var(--primary-text-color);
+}
+
+.button {
+    border: none;
+    border-radius: 14px;
+    padding: 11px 20px;
+    font-family: inherit;
+    cursor: pointer;
+
+    color: var(--primary-white-color);
+    background-color: var(--secondary-text-color);
+}
+
+/* -----------------HEADER--------------- */
+
+.site-nav .link {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.60;
+
+    color: var(--secondary-text-color);
+}
+
+/* hero */
+
+.hero {
+    background-color: var(--secondary-white-color);
+}
+
+.title {
+    font-family: Work Sans, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.43;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero .top-text {
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 1.10;
+
+    color: var(--secondary-text-color);
+
+}
+
+.hero .text {
+    color: var(--third-text-color);
+}
+
+/* about */
+
+.about .top-title {
+    font-family: Work Sans, sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.19;
+
+    color: var(--third-text-color);
+}
+
+.about .text {
+    color: var(--third-text-color);
+}
+
+.expert-title {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.53;
+
+    color: var(--secondary-text-color);
+}
+
+.expert-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.00;
+}
+
+/* Reeding House */
+
+.reeding-house .title,
+.staircase .title {
+    color: var(--third-text-color);
+}
+
+/* Our process */
+
+.process .top-text {
+    font-weight: 400;
+    font-size: 39px;
+    line-height: 1.08;
+    text-align: center;
+
+    color: var(--secondary-text-color);
+}
+
+.process-list .title {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.44;
+    text-align: center;
+
+    color: var(--third-text-color);
+}
+
+/* prior clients */
+
+.clients {
+    background-color: var(--third-text-color);
+}
+
+.clients .title {
+    color: var(--secondary-white-color);
+}
+
+.clients .top-title {
+    font-family: Work Sans, sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.19;
+
+    color: var(--primary-white-color);
+}
+
+.clients .text {
+    color: var(--secondary-white-color);
+}
+
