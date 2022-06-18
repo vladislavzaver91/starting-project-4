@@ -9,6 +9,7 @@
     --secondary-white-color: #ECE7E4;
     --secondary-bg-color: #F7F7F7;
     --third-bg-color: #CEC4BC;
+    --primary-cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list {
@@ -18,11 +19,29 @@
 }
 
 .link {
+    position: relative;
     display: block;
     text-decoration: none;
     font-style: normal;
 
     color: var(--secondary-text-color);
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+
+    background-color: transparent;
+}
+
+.link:hover.link::after,
+.link:focus.link::after {
+    background-color: #999999;
 }
 
 h1,
@@ -53,6 +72,20 @@ body {
     color: var(--primary-text-color);
 }
 
+.first-container {
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 1230px;
+}
+
+.sec-container {
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 1198px;
+}
+
 .button {
     border: none;
     border-radius: 14px;
@@ -64,9 +97,47 @@ body {
     background-color: var(--secondary-text-color);
 }
 
+.button:hover,
+.button:focus {
+    color: var(--secondary-text-color);
+    background-color: var(--third-bg-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    transition: background-color 300ms var(--primary-cubic),
+        color 300ms var(--primary-cubic);
+}
+
+.button:active {
+    color: var(--primary-white-color);
+    background-color: var(--secondary-text-color);
+    transition: background-color 300ms var(--primary-cubic),
+        color 300ms var(--primary-cubic);
+}
+
 /* -----------------HEADER--------------- */
 
-.site-nav .link {
+.site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+
+.site-nav-list {
+    display: flex;
+    margin-left: 343px;
+}
+
+.site-nav-list .item {
+    margin-right: 32px;
+}
+
+.site-nav-list .link {
+    display: block;
+    padding-top: 33px;
+    padding-bottom: 33px;
+
     font-weight: 400;
     font-size: 15px;
     line-height: 1.60;
@@ -74,13 +145,39 @@ body {
     color: var(--secondary-text-color);
 }
 
+.site-nav .button {
+    margin-right: 20px;
+}
+
 /* hero */
 
 .hero {
+    max-width: 1440px;
+    height: 720px;
+    margin: 0 auto;
+    padding: 77px 60px;
+
     background-color: var(--secondary-white-color);
+    background-image: url('../images/hero-img.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
 }
 
-.title {
+.hero-content {
+    margin: 0;
+    padding-top: 60px;
+    padding-right: 51px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+
+    width: 600px;
+    height: 566px;
+}
+
+.hero .title {
+    margin-bottom: 20px;
+
     font-family: Work Sans, sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -90,21 +187,48 @@ body {
 }
 
 .hero .top-text {
+    margin-bottom: 18px;
+
     font-weight: 400;
     font-size: 64px;
     line-height: 1.10;
 
     color: var(--secondary-text-color);
-
 }
 
 .hero .text {
+    margin-bottom: 30px;
+
     color: var(--third-text-color);
+}
+
+.hero .link {
+    max-width: 93px;
 }
 
 /* about */
 
+.about {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-top: 106px;
+    padding-right: 336px;
+    padding-bottom: 100px;
+    padding-left: 336px;
+}
+
+.about-content {
+    position: relative;
+
+    max-width: 768px;
+    padding-left: 267px;
+}
+
 .about .top-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+
     font-family: Work Sans, sans-serif;
     font-weight: 400;
     font-size: 32px;
@@ -114,7 +238,20 @@ body {
 }
 
 .about .text {
+    margin-bottom: 10px;
+
+    width: 493px;
+
     color: var(--third-text-color);
+}
+
+.expert-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.about .expert-about {
+    margin-left: 30px;
 }
 
 .expert-title {
@@ -133,6 +270,21 @@ body {
 
 /* Reeding House */
 
+.reeding-house {
+    width: 1440px;
+    height: 600px;
+    margin: 0 auto;
+    padding-top: 266px;
+    padding-right: 75px;
+    padding-bottom: 266px;
+    padding-left: 1080px;
+
+    background-color: var(--secondary-white-color);
+    background-image: url('../images/bg-img-house.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .reeding-house .title,
 .staircase .title {
     color: var(--third-text-color);
@@ -140,7 +292,18 @@ body {
 
 /* Our process */
 
+.process {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.process .title {
+    text-align: center;
+}
+
 .process .top-text {
+    margin-bottom: 40px;
+
     font-weight: 400;
     font-size: 39px;
     line-height: 1.08;
@@ -149,7 +312,31 @@ body {
     color: var(--secondary-text-color);
 }
 
+.process-list {
+    display: flex;
+    justify-content: center;
+}
+
+.process-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 379px;
+    height: 259px;
+}
+
+.process-list-item + .process-list-item {
+    margin-left: 16px;
+}
+
+.process-icon {
+    margin-bottom: 15px;
+}
+
 .process-list .title {
+    margin-bottom: 10px;
+
     font-weight: 400;
     font-size: 18px;
     line-height: 1.44;
@@ -158,10 +345,36 @@ body {
     color: var(--third-text-color);
 }
 
+/* The marble staircase */
+
+.marble-stairs {
+    width: 1440px;
+    height: 600px;
+    margin: 0 auto;
+    padding-top: 266px;
+    padding-right: 75px;
+    padding-bottom: 266px;
+    padding-left: 1080px;
+
+    background-color: var(--secondary-white-color);
+    background-image: url('../images/bg-img-marble-stair.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /* prior clients */
 
 .clients {
+    display: flex;
+
+    padding-top: 60px;
+    padding-bottom: 60px;
+
     background-color: var(--third-text-color);
+}
+
+.clients-text-wrap {
+    margin-right: 132px;
 }
 
 .clients .title {
@@ -169,6 +382,8 @@ body {
 }
 
 .clients .top-title {
+    margin-bottom: 14px;
+
     font-family: Work Sans, sans-serif;
     font-weight: 400;
     font-size: 32px;
@@ -178,6 +393,236 @@ body {
 }
 
 .clients .text {
+    max-width: 460px;
+
     color: var(--secondary-white-color);
 }
 
+.clients-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    width: 432px;
+}
+
+.clients-list-item:nth-child(2n) {
+    margin-left: 96px;
+}
+
+.clients-list-item:nth-child(-n + 2) {
+    margin-bottom: 96px;
+}
+
+/* The swirling staircase */
+
+.swirling-stairs {
+    width: 1440px;
+    height: 600px;
+    margin: 0 auto;
+    padding-top: 266px;
+    padding-right: 1095px;
+    padding-bottom: 266px;
+    padding-left: 60px;
+
+    background-color: var(--secondary-white-color);
+    background-image: url('../images/bg-img-swirling-stair.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Featured projects */
+
+.project {
+    padding-top: 120px;
+    padding-bottom: 100px;
+
+    background-color: var(--secondary-bg-color);
+}
+
+.project-title {
+    margin-bottom: 15px;
+    margin-left: 16px;
+
+    font-weight: 400;
+    font-size: 39px;
+    line-height: 1.08;
+
+    color: var(--secondary-text-color)
+}
+
+.project .text {
+    margin-bottom: 42px;
+    margin-left: 16px;
+
+    max-width: 600px;
+
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.25;  
+}
+
+.projects-list {
+    display: flex;
+    justify-content: space-evenly;
+
+    margin-bottom: 40px;
+}
+
+.projects-list-item:nth-child(2n) {
+    position: relative;
+}
+
+.positioning-wrap {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.projects-list-item .top-text {
+    margin-bottom: 282px;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 1.30;
+
+    color: var(--third-text-color);
+}
+
+.project-link {
+    max-width: 140px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.50;
+    
+    text-align: center;
+    letter-spacing: 0.4px;
+
+    color: var(--secondary-text-color);
+}
+
+/* team */
+
+.team .sec-container {
+    display: flex;
+
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.team-text-wrap {
+    margin-right: 16px;
+    padding-right: 21px;
+    padding-bottom: 196px;
+    width: 379px;
+}
+
+.team .top-title {
+    margin-bottom: 14px;
+}
+
+.team .text {
+    margin-bottom: 30px;
+}
+
+.team-link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.50;
+
+    letter-spacing: 0.4px;
+
+    color: var(--secondary-text-color);
+}
+
+.team-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 773px;
+}
+
+.team-list-item {
+    display: flex;
+    align-items: center;
+
+    width: 280px;
+    height: 100px;
+}
+
+.team-list-item:nth-child(2n) {
+    margin-left: 114px;
+}
+
+.team-list-item:nth-child(-n + 3) {
+    margin-bottom: 36px;
+}
+
+
+/* reach */
+
+.reach {
+    background-color: var(--third-bg-color);
+}
+
+.reach .sec-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.reach .top-text {
+    max-width: 569px;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 1.05;
+
+    color: var(--secondary-text-color);
+}
+
+.reach-link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.50;
+
+    letter-spacing: 0.4px;
+
+    color: var(--secondary-text-color);
+}
+
+/* ---------------------FOOTER------------------- */
+
+.footer {
+    background-color: var(--secondary-bg-color);
+}
+
+.footer .sec-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.footer .logo-link {
+    margin-bottom: 20px;
+}
+
+.footer-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.43;
+}
+
+.footer .soc-list {
+    display: flex;
+}
+
+.soc-list-item:nth-child(n + 2) {
+    margin-left: 20px;
+}
